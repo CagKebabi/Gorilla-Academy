@@ -1,0 +1,119 @@
+.createContentContainer {
+  display: flex;
+  padding: 0 4.5% 0 4.5%;
+}
+.createContentContainer .createContentInputsContainer {
+  width: 25%;
+  background-color: #fafafa;
+}
+.createContentContainer .createContentInputsContainer ul {
+  width: 80%;
+  background-color: #fafafa;
+  margin-top: 22%;
+}
+.createContentContainer .createContentInputsContainer ul li:nth-child(1) {
+  margin-bottom: 8%;
+}
+.createContentContainer .createContentInputsContainer ul li:nth-child(1) input {
+  width: 100%;
+  line-height: 4.8vh;
+  border-radius: 25px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: rgba(0, 0, 0, 0.4);
+  outline: none;
+  padding: 0 5% 0 5%;
+}
+.createContentContainer .createContentInputsContainer ul li:nth-child(2) {
+  margin-bottom: 16%;
+}
+.createContentContainer .createContentInputsContainer ul li:nth-child(2) select {
+  cursor: pointer;
+  width: 100%;
+  height: 5.6vh;
+  border-radius: 25px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  padding: 0 5% 0 5%;
+  font-size: 0.9vw;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: rgba(0, 0, 0, 0.4);
+  outline: none;
+}
+.createContentContainer .createContentInputsContainer ul li:nth-child(2) select option {
+  width: 100%;
+  height: 5.6vh;
+  border-radius: 25px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+.createContentContainer .createContentInputsContainer ul li:nth-child(3) {
+  margin-bottom: 16%;
+}
+.createContentContainer .createContentInputsContainer ul li:nth-child(3) button {
+  cursor: pointer;
+  width: 100%;
+  line-height: 4.8vh;
+  border-radius: 25px;
+  background-color: #5d4cc6;
+  border: none;
+  color: white;
+  font-size: 0.9vw;
+}
+.createContentContainer .createContentInputsContainer ul li:nth-child(4) {
+  display: flex;
+  justify-content: center;
+}
+.createContentContainer .createContentInputsContainer ul li:nth-child(4) button {
+  cursor: pointer;
+  border: none;
+  background-color: #fafafa;
+  font-family: "Roboto Mono", monospace;
+  display: flex;
+  justify-content: center;
+  color: #5d4cc6;
+  font-weight: 900;
+  text-decoration: underline;
+  font-size: 1.2vw;
+}
+.createContentContainer .createContentContentContainer {
+  width: 75%;
+  background-color: #fafafa;
+}
+.createContentContainer .createContentContentContainer .codemirrorButtons {
+  height: 9vh;
+  background-color: #fafafa;
+}
+.createContentContainer .createContentContentContainer .codemirrorButtons button:nth-child(1) {
+  cursor: pointer;
+  width: 4.4%;
+  height: 60%;
+  border-radius: 50px;
+  background-color: white;
+  border: 2px dashed rgba(0, 0, 0, 0.2);
+}
+.createContentContainer .createContentContentContainer .codemirrorButtons button:nth-child(1) i {
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 1.1vw;
+}
+.createContentContainer .createContentContentContainer .codemirrorButtons button:nth-child(2) {
+  cursor: pointer;
+  width: 4.4%;
+  height: 60%;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-left: 3%;
+}
+.createContentContainer .createContentContentContainer .codemirrorButtons button:nth-child(2) i {
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 1.1vw;
+}
+.createContentContainer .createContentContentContainer .conntentArea {
+  padding: 1%;
+  min-height: 53vh;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+}/*# sourceMappingURL=createcontent.css.map */

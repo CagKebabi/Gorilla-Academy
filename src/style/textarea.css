@@ -1,0 +1,12 @@
+.NewContentTextArea {
+    resize: none;
+    overflow: hidden;
+    min-height: 50px;
+    width: 80%;
+    border: none;
+    outline: none;
+    appearance: none;
+    border-radius: 25px;
+    padding-left: 1%;
+    font-size: 1vw;
+}

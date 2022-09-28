@@ -1,0 +1,80 @@
+.contentBox .contentBoxDiv3 div, .contentBox .contentBoxDiv3, .contentBox .contentBoxDiv2 h1, .contentBox .contentBoxDiv2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentBox {
+  display: flex;
+  line-height: 8vh;
+  box-shadow: 0px 5px 11px -5px rgba(0, 0, 0, 0.2);
+}
+.contentBox .contentBoxDiv1 {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  font-size: 0.8vw;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+  padding-left: 1.5%;
+}
+.contentBox .contentBoxDiv1 i {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.4);
+  width: 9%;
+}
+.contentBox .contentBoxDiv1 i:hover {
+  color: #7376ff;
+}
+.contentBox .contentBoxDiv1 h1 {
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 600;
+  width: 70%;
+}
+.contentBox .contentBoxDiv1 h2 {
+  color: #a3aeb9;
+}
+.contentBox .contentBoxDiv2 {
+  width: 30%;
+}
+.contentBox .contentBoxDiv2 div {
+  width: 29%;
+  height: 58%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.contentBox .contentBoxDiv2 img {
+  width: 42%;
+  border-radius: 81%;
+}
+.contentBox .contentBoxDiv2 h1 {
+  color: rgba(0, 0, 0, 0.8);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8vw;
+  font-weight: 800;
+}
+.contentBox .contentBoxDiv3 {
+  width: 22%;
+}
+.contentBox .contentBoxDiv3 div {
+  width: 47%;
+  height: 40%;
+  border-radius: 5%;
+  background-color: red;
+  font-size: 0.7vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: #7376ff;
+  background-color: #e7e7ff;
+}
+.contentBox .contentBoxDiv4 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 18%;
+  padding-right: 3%;
+}
+.contentBox .contentBoxDiv4 i {
+  font-size: 1vw;
+}/*# sourceMappingURL=contentbox.css.map */

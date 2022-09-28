@@ -1,0 +1,29 @@
+.blogContentBoxContainer {
+  display: flex;
+  margin-top: 6%;
+  padding-left: 5%;
+}
+.blogContentBoxContainer .blogContentBoxImageContainer {
+  width: 40%;
+}
+.blogContentBoxContainer .blogContentBoxImageContainer img {
+  width: 4vw;
+  border-radius: 100%;
+  width: 100%;
+}
+.blogContentBoxContainer .blogContentBoxTextContainer {
+  margin-left: 5%;
+}
+.blogContentBoxContainer .blogContentBoxTextContainer p {
+  font-size: 0.9vw;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 600;
+}
+.blogContentBoxContainer .blogContentBoxTextContainer h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.4);
+  margin-top: 6%;
+  font-size: 0.7vw;
+  font-weight: 600;
+}/*# sourceMappingURL=blogcontentbox.css.map */

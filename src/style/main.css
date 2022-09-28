@@ -1,0 +1,314 @@
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamMembersContainer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  background-color: #fafafa;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.main .mainSection1 {
+  width: 75.5%;
+  background-color: white;
+  padding: 3%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  position: relative;
+}
+.main .mainSection1 .mainSection1WelcomeContainer {
+  border-bottom: 0.2vh solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  width: 100%;
+}
+.main .mainSection1 .mainSection1WelcomeContainer .mainSection1WelcomeUserSide {
+  width: 70%;
+  background-color: white;
+}
+.main .mainSection1 .mainSection1WelcomeContainer .mainSection1WelcomeUserSide .mainSection1WelcomeTextContainer {
+  width: 100%;
+}
+.main .mainSection1 .mainSection1WelcomeContainer .mainSection1WelcomeUserSide .mainSection1WelcomeTextContainer h1 {
+  line-height: 10vh;
+  font-size: 2.3vw;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.main .mainSection1 .mainSection1WelcomeContainer .mainSection1WelcomeUserSide .mainSection1WelcomeTextContainer h2 {
+  line-height: 2.6vh;
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+.main .mainSection1 .mainSection1WelcomeContainer .mainSection1WelcomeUserSide .mainSection1WelcomeTextContainer h3 {
+  line-height: 2.6vh;
+  font-size: 1.5vw;
+  font-weight: 600;
+}
+.main .mainSection1 .mainSection1WelcomeContainer .mainSection1WelcomeUserSide .mainSection1WelcomeIconContainer div {
+  width: 27%;
+  height: 9vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .mainSection1 .mainSection1WelcomeContainer .mainSection1WelcomeUserSide .mainSection1WelcomeIconContainer div i {
+  font-size: 1.2vw;
+  color: #a3aeb9;
+  cursor: pointer;
+}
+.main .mainSection1 .mainSection1WelcomeContainer .mainSection1WelcomeUserSide .mainSection1WelcomeIconContainer div .WelcomeIcon1:hover {
+  color: green;
+}
+.main .mainSection1 .mainSection1WelcomeContainer .mainSection1WelcomeUserSide .mainSection1WelcomeIconContainer div .WelcomeIcon2:hover {
+  color: orange;
+}
+.main .mainSection1 .mainSection1WelcomeContainer .mainSection1WelcomeUserSide .mainSection1WelcomeIconContainer div .WelcomeIcon3:hover {
+  color: lightskyblue;
+}
+.main .mainSection1 .mainSection1WelcomeContainer .mainSection1WelcomeUserSide .mainSection1WelcomeIconContainer div .WelcomeIcon4:hover {
+  color: blue;
+}
+.main .mainSection1 .mainSection1WelcomeImageSide {
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 21.6vh;
+  position: absolute;
+  overflow: hidden;
+}
+.main .mainSection1 .mainSection1WelcomeImageSide div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: -20%;
+  right: -20%;
+}
+.main .mainSection1 .mainSection1WelcomeImageSide div img {
+  width: 60%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: rotate(190deg);
+}
+.main .mainSection1 .mainSection1LastUploadedText h1 {
+  font-size: 1.3vw;
+  line-height: 10vh;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #5c4cc6;
+}
+.main .mainSection1 .mainSection1LastUploadedTitles {
+  display: flex;
+  justify-content: space-between;
+  line-height: 7vh;
+  box-shadow: 0px 5px 11px -5px rgba(0, 0, 0, 0.2);
+}
+.main .mainSection1 .mainSection1LastUploadedTitles .productTextDiv {
+  width: 25%;
+}
+.main .mainSection1 .mainSection1LastUploadedTitles div {
+  color: #a3aeb9;
+  font-size: 0.9vw;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 1px;
+}
+.main .mainSection2 {
+  width: 24.5%;
+  padding: 6% 2% 2% 2%;
+}
+.main .mainSection2 .mainSection2TeamsContainer .mainSection2CreateTeamContainer1 .mainSection2CreateTeamContainer2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Roboto Mono", monospace;
+  border: 3px dashed rgb(237, 237, 237);
+  border-radius: 50px;
+  padding: 0 5% 0 5%;
+  width: 50%;
+  height: 5.4vh;
+  color: rgba(0, 0, 0, 0.3);
+  background-color: white;
+  box-shadow: -1px 5px 12px -1px rgba(0, 0, 0, 0.14);
+}
+.main .mainSection2 .mainSection2TeamsContainer .mainSection2CreateTeamContainer1 .mainSection2CreateTeamContainer2 p {
+  font-size: 1vw;
+  font-weight: 600;
+}
+.main .mainSection2 .mainSection2TeamsContainer .mainSection2CreateTeamContainer1 .mainSection2CreateTeamContainer2 i {
+  font-size: 1vw;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamNameContainer {
+  width: 65%;
+  margin-top: 9%;
+  margin-bottom: 6%;
+  display: flex;
+  align-items: center;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamNameContainer h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 0.8vw;
+  font-weight: 800;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamNameContainer i {
+  font-size: 0.7vw;
+  color: rgba(0, 0, 0, 0.7);
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamMembersContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 3%;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamMembersContainer img:nth-child(1) {
+  width: 16%;
+  background-color: aqua;
+  border-radius: 100%;
+  position: relative;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamMembersContainer img:nth-child(2) {
+  width: 16%;
+  background-color: lightgreen;
+  border-radius: 100%;
+  position: relative;
+  left: -10%;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamMembersContainer img:nth-child(3) {
+  width: 16%;
+  background-color: lightsalmon;
+  border-radius: 100%;
+  position: relative;
+  left: -20%;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamMembersContainer img:nth-child(4) {
+  width: 16%;
+  background-color: lime;
+  border-radius: 100%;
+  position: relative;
+  left: -30%;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamMembersContainer div {
+  width: 16%;
+  background-color: #5e4cc5;
+  border-radius: 100%;
+  position: relative;
+  left: -40%;
+  cursor: pointer;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamMembersContainer div:hover {
+  transform: translateX(7%);
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 0.5s;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamMembersContainer div button {
+  all: unset;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamMembersContainer div button i {
+  color: white;
+  font-size: 1.2vw;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamMembersContainer img:hover {
+  cursor: pointer;
+  transform: translateY(-7%);
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 0.5s;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamFeaturesContainer {
+  margin-top: 7%;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamFeaturesContainer li {
+  display: flex;
+  align-items: center;
+  line-height: 3.5vh;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamFeaturesContainer li:nth-child(1) div {
+  background-color: #A8CAFE;
+  border-radius: 100%;
+  width: 4%;
+  height: 1.4vh;
+  margin-left: 5%;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamFeaturesContainer li:nth-child(2) div {
+  background-color: #5c4cc6;
+  border-radius: 100%;
+  width: 4%;
+  height: 1.4vh;
+  margin-left: 5%;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamFeaturesContainer li:nth-child(3) div {
+  background-color: lightblue;
+  border-radius: 100%;
+  width: 4%;
+  height: 1.4vh;
+  margin-left: 5%;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamFeaturesContainer li:nth-child(4) div {
+  background-color: #e39c98;
+  border-radius: 100%;
+  width: 4%;
+  height: 1.4vh;
+  margin-left: 5%;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamFeaturesContainer li:nth-child(5) div {
+  background-color: #aad7a2;
+  border-radius: 100%;
+  width: 4%;
+  height: 1.4vh;
+  margin-left: 5%;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamFeaturesContainer div:nth-child(5) {
+  background-color: #5c4cc6;
+  border-radius: 100%;
+  width: 4%;
+  height: 1.4vh;
+  margin-left: 5%;
+}
+.main .mainSection2 .mainSection2TeamsContainer .teamsContainerTeamFeaturesContainer h1 {
+  font-size: 0.8vw;
+  font-weight: 600;
+  margin-left: 4%;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main .mainSection2 .mainSection2BlogContainer .blogContentBoxBlogTextContainer {
+  padding-left: 5%;
+  margin-top: 15%;
+}
+.main .mainSection2 .mainSection2BlogContainer .blogContentBoxBlogTextContainer h1 {
+  color: #f68125;
+  font-size: 1.6vw;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main .mainSection2 .mainSection2BlogContainer .blogContentBoxRecentTextContainer {
+  padding-left: 5%;
+  margin-top: 10%;
+}
+.main .mainSection2 .mainSection2BlogContainer .blogContentBoxRecentTextContainer h1 {
+  font-size: 1vw;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main .mainSection2 .mainSection2BlogContainer .blogContentBoxGoToAllText {
+  cursor: pointer;
+  display: flex;
+  padding: 13% 0 0 28%;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  align-items: center;
+}
+.main .mainSection2 .mainSection2BlogContainer .blogContentBoxGoToAllText h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.7vw;
+}
+.main .mainSection2 .mainSection2BlogContainer .blogContentBoxGoToAllText i {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.7vw;
+  margin-left: 2%;
+}/*# sourceMappingURL=main.css.map */

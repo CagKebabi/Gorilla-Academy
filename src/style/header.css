@@ -1,0 +1,231 @@
+.headerUserSideContainer .headerUserSideContainer2 .headerUserInformationsContainer .headerUserInformationsContainer2 i, .headerNewContentContainer1, .headerLogoTextContainer h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  padding: 2% 4%;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  box-sizing: border-box;
+  background-color: #fafafa;
+}
+header .headerDropDownPopUpActive {
+  display: block;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+header .headerDropDownPopUpClose {
+  display: none;
+}
+
+.headerContentsContainer,
+.headerLogoTextContainer,
+.headerNewContentContainer2,
+.headerUserSideContainer,
+.headerUserSideContainer2,
+.headerUserInformationsContainer2,
+.headerNotificationsContainer {
+  display: flex;
+}
+
+.headerUserSideContainer2 {
+  justify-content: flex-end;
+}
+
+.headerLogoTextContainer,
+.headerNewContentContainer1,
+.headerUserSideContainer {
+  width: 33%;
+}
+
+.headerLogoTextContainer {
+  align-items: center;
+}
+
+.headerContentsContainer {
+  width: 100%;
+}
+
+.headerLogoTextContainer img {
+  width: 10%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.headerUserInformationsContainer img {
+  width: 22%;
+  border-radius: 100px;
+  margin-right: 2%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  z-index: 100;
+}
+
+.headerLogoTextContainer h1 {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.5vw;
+  font-weight: 600;
+}
+.headerLogoTextContainer h1 a {
+  color: rgb(112, 112, 112);
+  text-decoration: none;
+}
+
+.headerNewContentContainer1 div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Roboto Mono", monospace;
+  border: 3px dashed rgb(237, 237, 237);
+  border-radius: 50px;
+  padding: 0 3% 0 3%;
+  width: 40%;
+  height: 80%;
+  background-color: white;
+  box-shadow: -1px 5px 12px -1px rgba(0, 0, 0, 0.14);
+}
+.headerNewContentContainer1 div p a {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 1vw;
+  font-weight: 600;
+  text-decoration: none;
+}
+.headerNewContentContainer1 div i {
+  font-size: 1vw;
+}
+
+.headerUserSideContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+.headerUserSideContainer .headerUserSideContainer2 {
+  width: 80%;
+}
+.headerUserSideContainer .headerUserSideContainer2 .headerNotificationsContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 20%;
+  margin-right: 8%;
+}
+.headerUserSideContainer .headerUserSideContainer2 .headerNotificationsContainer i:nth-child(1) {
+  color: rgb(176, 185, 195);
+  font-size: 1.1vw;
+}
+.headerUserSideContainer .headerUserSideContainer2 .headerNotificationsContainer i:nth-child(1):hover {
+  color: #dd858d;
+  cursor: pointer;
+}
+.headerUserSideContainer .headerUserSideContainer2 .headerNotificationsContainer i:nth-child(2) {
+  color: rgb(176, 185, 195);
+  font-size: 1.1vw;
+}
+.headerUserSideContainer .headerUserSideContainer2 .headerNotificationsContainer i:nth-child(2):hover {
+  color: #5d4cc6;
+  cursor: pointer;
+}
+.headerUserSideContainer .headerUserSideContainer2 .headerUserInformationsContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 60%;
+}
+.headerUserSideContainer .headerUserSideContainer2 .headerUserInformationsContainer .headerUserInformationsContainer2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerUserSideContainer .headerUserSideContainer2 .headerUserInformationsContainer .headerUserInformationsContainer2 h1 {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.1vw;
+  font-weight: 600;
+}
+.headerUserSideContainer .headerUserSideContainer2 .headerUserInformationsContainer .headerUserInformationsContainer2 h2 {
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.6vw;
+  font-weight: 500;
+  margin-top: 4%;
+  color: rgb(176, 185, 195);
+}
+.headerUserSideContainer .headerUserSideContainer2 .headerUserInformationsContainer .headerUserInformationsContainer2 .headerDropDownIcon {
+  cursor: pointer;
+  position: relative;
+  background-color: #fafafa;
+  z-index: 100;
+  margin-bottom: 8%;
+  border-radius: 50%;
+  width: 8%;
+  height: 31%;
+  display: block;
+}
+.headerUserSideContainer .headerUserSideContainer2 .headerUserInformationsContainer .headerUserInformationsContainer2 .headerDropDownIcon .headerDropDownIconMenuClose {
+  display: none;
+}
+.headerUserSideContainer .headerUserSideContainer2 .headerUserInformationsContainer .headerUserInformationsContainer2 .headerDropDownIcon .headerDropDownIconMenuActive {
+  display: block;
+  position: absolute;
+  background-color: #fafafa;
+  top: 135%;
+  right: 0;
+  width: 8vw;
+  border-radius: 7px;
+  padding: 50% 0 50% 100%;
+  box-sizing: border-box;
+}
+.headerUserSideContainer .headerUserSideContainer2 .headerUserInformationsContainer .headerUserInformationsContainer2 i {
+  font-weight: 800;
+  font-size: 0.8vw;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.headerDropDownIconUlClose {
+  display: none;
+}
+
+.headerDropDownIconUlActive {
+  display: block;
+}
+.headerDropDownIconUlActive li {
+  line-height: 6.5vh;
+  font-size: 0.8vw;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.3);
+}
+.headerDropDownIconUlActive li:hover {
+  cursor: pointer;
+  color: black;
+}
+.headerDropDownIconUlActive li:nth-child(3) a {
+  font-size: 0.8vw;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+.headerDropDownIconUlActive li:nth-child(3) a:hover {
+  cursor: pointer;
+  color: black;
+}
+.headerDropDownIconUlActive li:nth-child(4) a {
+  font-size: 0.8vw;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+.headerDropDownIconUlActive li:nth-child(4) a:hover {
+  cursor: pointer;
+  color: black;
+}/*# sourceMappingURL=header.css.map */

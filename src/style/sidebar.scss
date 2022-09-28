@@ -1,0 +1,81 @@
+.asideBarContainer1 {
+    width: 14%;
+    // height: calc(100vh - 14.2vh);
+    background-color: #fafafa;
+    box-sizing: border-box;
+    .asideBarContainer2 {
+        width: 100%;
+        height: 34%;
+        display: flex;
+        align-items: center;
+        .navigationsListContainer {
+            width: 100%;
+            height: 58%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            .asideBarNavigation {
+                cursor: pointer;
+                box-sizing: border-box;
+                width: 70%;
+                line-height: 7vh;
+                font-family: 'Roboto Mono', monospace;
+                background-color: #fafafa;
+                font-size: .8vw; 
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                color: #b6bec7;
+                position: relative;
+
+                i {
+                    font-size: 1vw;
+                    margin: 0 6% 0 11%;
+                }                
+            }
+            .asideBarNavigationOnclick {
+                border-top: 1px solid #ececec;
+                border-left: 1px solid #ececec;
+                border-bottom: 1px solid #ececec;
+                cursor: pointer;
+                box-sizing: border-box;
+                width: 70%;
+                line-height: 7vh;
+                font-family: 'Roboto Mono', monospace;
+                background-color: white;
+                border-bottom-left-radius: 10px;
+                border-top-left-radius: 10px;
+                font-size: .8vw;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                color: black;
+                position: relative;
+                &::after {
+                    content: " ";
+                    width: 1px;
+                    height: 100%;
+                    background-color: white;
+                    position: absolute;
+                    right: -1%;
+                    z-index: 999;
+                }
+                i{
+                    font-size: 1vw;
+                    margin: 0 6% 0 11%;
+                }
+            }
+            .categoriesContainer1 {
+                width: 60%;
+                background-color: white;
+                .categoriesContainer2 {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+

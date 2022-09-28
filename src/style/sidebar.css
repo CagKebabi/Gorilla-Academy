@@ -1,0 +1,75 @@
+.asideBarContainer1 {
+  width: 14%;
+  background-color: #fafafa;
+  box-sizing: border-box;
+}
+.asideBarContainer1 .asideBarContainer2 {
+  width: 100%;
+  height: 34%;
+  display: flex;
+  align-items: center;
+}
+.asideBarContainer1 .asideBarContainer2 .navigationsListContainer {
+  width: 100%;
+  height: 58%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.asideBarContainer1 .asideBarContainer2 .navigationsListContainer .asideBarNavigation {
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 70%;
+  line-height: 7vh;
+  font-family: "Roboto Mono", monospace;
+  background-color: #fafafa;
+  font-size: 0.8vw;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  color: #b6bec7;
+  position: relative;
+}
+.asideBarContainer1 .asideBarContainer2 .navigationsListContainer .asideBarNavigation i {
+  font-size: 1vw;
+  margin: 0 6% 0 11%;
+}
+.asideBarContainer1 .asideBarContainer2 .navigationsListContainer .asideBarNavigationOnclick {
+  border-top: 1px solid #ececec;
+  border-left: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 70%;
+  line-height: 7vh;
+  font-family: "Roboto Mono", monospace;
+  background-color: white;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  font-size: 0.8vw;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  color: black;
+  position: relative;
+}
+.asideBarContainer1 .asideBarContainer2 .navigationsListContainer .asideBarNavigationOnclick::after {
+  content: " ";
+  width: 1px;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  right: -1%;
+  z-index: 999;
+}
+.asideBarContainer1 .asideBarContainer2 .navigationsListContainer .asideBarNavigationOnclick i {
+  font-size: 1vw;
+  margin: 0 6% 0 11%;
+}
+.asideBarContainer1 .asideBarContainer2 .navigationsListContainer .categoriesContainer1 {
+  width: 60%;
+  background-color: white;
+}
+.asideBarContainer1 .asideBarContainer2 .navigationsListContainer .categoriesContainer1 .categoriesContainer2 {
+  width: 100%;
+}/*# sourceMappingURL=sidebar.css.map */
