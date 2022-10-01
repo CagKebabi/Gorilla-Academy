@@ -10,6 +10,7 @@ import { UserNameProvider } from './context/usernamecontext';
 import { ContentContextProvider } from './context/contentscontext';
 import { ContentBoxClickContextProvider } from './context/contentboxclickcontext';
 import { CategoryNameContextProvider } from './context/categorynamecontext';
+import { CategoryContentIndexeContextProvider } from './context/categroycontentindexcontext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,7 +20,9 @@ root.render(
       <UserNameProvider>
         <ContentBoxClickContextProvider>
           <CategoryNameContextProvider>
-           <App />
+            <CategoryContentIndexeContextProvider>
+              <App />
+            </CategoryContentIndexeContextProvider>
           </CategoryNameContextProvider>
         </ContentBoxClickContextProvider>
       </UserNameProvider>

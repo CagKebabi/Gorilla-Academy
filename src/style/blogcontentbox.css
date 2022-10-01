@@ -3,8 +3,12 @@
   margin-top: 6%;
   padding-left: 5%;
 }
+.blogContentBoxContainer a {
+  padding: initial;
+  align-items: center;
+}
 .blogContentBoxContainer .blogContentBoxImageContainer {
-  width: 40%;
+  width: 22%;
 }
 .blogContentBoxContainer .blogContentBoxImageContainer img {
   width: 4vw;

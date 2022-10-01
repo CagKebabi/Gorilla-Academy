@@ -15,6 +15,7 @@ export const ContentBoxClickContextProvider = ({children}) => {
   const [textArea2,setTextArea2] = useState("");
   const [date,setDate] = useState("");
   const [uid,setUid] = useState("");
+  const [icerikKtegorisi,seticerikKtegorisi] = useState("");
 
 
   const values = {
@@ -28,7 +29,8 @@ export const ContentBoxClickContextProvider = ({children}) => {
     codeMirror2,setCodeMirror2,
     textArea2,setTextArea2,
     date,setDate,
-    uid,setUid
+    uid,setUid,
+    icerikKtegorisi,seticerikKtegorisi
   }
 
   return <ContentBoxClickContext.Provider value={values} >{children}</ContentBoxClickContext.Provider>

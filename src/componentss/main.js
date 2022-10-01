@@ -9,6 +9,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { useContext } from 'react'
 import ContentBoxClickContext from "../context/contentboxclickcontext"
+import CategoryContentIndexeContext from '../context/categroycontentindexcontext';
 import { NavLink } from 'react-router-dom'
 import cssLogo from '../media/cssLogo.png'
 import htmlLogo from '../media/htmlLogo.png'
@@ -35,13 +36,18 @@ function Main() {
   const {textArea2,setTextArea2} = useContext(ContentBoxClickContext);
   const {date,setDate} = useContext(ContentBoxClickContext);
   const {uid,setUid} = useContext(ContentBoxClickContext);
+  const {icerikKtegorisi,seticerikKtegorisi} = useContext(ContentBoxClickContext);
+ 
   const [denemes,setDenemes] = useState([]);
+  const [blogContents,setBlogContents] = useState([])
   const [username2,setusername2] = useState("");
-  const useruid = localStorage.getItem("useruid")
+  const useruid = localStorage.getItem("useruid");
+
+  const {html,setHtml} = useContext(CategoryContentIndexeContext);
 
   const categoryImage = [htmlLogo,cssLogo,javascriptLogo,reactLogo,vueLogo,cplusLogo,csharpLogo,kotlinLogo,swiftLogo,sassLogo,bootstrapLogo,firebaseLogo];
-  const categoryName = ["html","css","javascrıpt","react","vue","cplus","csharp","kotlin","swift","sass","bootstrap","firebase"]
-
+  const categoryName = ["html","css","javascrıpt","react","vue","cplus","csharp","kotlin","swift","sass","bootstrap","firebase"];
+  const categoryName2 = ["html","css","javascript","react","vue","c++","c#","kotlin","swift","sass","bootstrap","firebase"];
 
   const fetchAll = (e) => {
       e && e.preventDefault();
@@ -61,6 +67,26 @@ function Main() {
 
 useEffect(fetchAll,[db]);
 
+
+const fetchAllBlog = (e) => {
+  e && e.preventDefault();
+  db.collection("blog")
+  .get()
+  .then((snapshot) => {
+      if(snapshot.docs.length>0){
+          snapshot.docs.forEach((doc) => {
+              setBlogContents((prev) => {
+                  return [...prev,doc.data()];
+              });
+          });
+      };
+  });
+  console.log(denemes)
+};
+
+
+useEffect(fetchAllBlog,[]);
+
 // const heightHandle = () => {
 //   const element = document.getElementById('contentBoxSection');
 //   // element.style.height = "15px";
@@ -68,7 +94,7 @@ useEffect(fetchAll,[db]);
 // }
 
 useEffect(() => {
-  getDoc(doc(db, "users", useruid)).then(docSnap => {
+  useruid && getDoc(doc(db, "users", useruid)).then(docSnap => {
       if (docSnap.exists()) {
         setusername2(docSnap.data().username);
       } else {
@@ -134,15 +160,16 @@ useEffect(() => {
                   setTextArea2(data.mirrortextareacontent2 && data.mirrortextareacontent2);
                   setDate(data.date && data.date);
                   setUid(data.uid && data.uid);
-                  
+                  seticerikKtegorisi(data.icerikKtegorisi && data.icerikKtegorisi)
                   console.log(index)
                 }} 
                 categoryimage={categoryImage[categoryName.indexOf(data.icerikKtegorisi)]}
-                icerikkategorisi = {data.icerikKtegorisi}
+                icerikkategorisi = {categoryName2[categoryName.indexOf(data.icerikKtegorisi)]}
                 icerikbasligi={data.icerikbasligi} 
                 name={data.username}
                 date={data.date}/>
                 </NavLink>
+
               </>)
               }
             </div>
@@ -202,15 +229,41 @@ useEffect(() => {
               </div>
               <div>
                 <ul>
-                  <BlogContentBox/>
-                  <BlogContentBox/>
-                  <BlogContentBox/>
-                  <BlogContentBox/>
+              {
+              blogContents && blogContents.map((data,index) => 
+              <>
+              {/* <NavLink to="contentshow" className="blogPageContentBoxContainer"> */}
+                <BlogContentBox 
+                 click={() => {
+                  setClickIndex(data.icerikbasligi);
+                  setUserName(data.username && data.username);
+                  setUserImage(data.imgUrl && data.imgUrl);
+                  setIcerikBasligi(data.icerikbasligi && data.icerikbasligi);
+                  setText(data.textareacontent1 && data.textareacontent1);
+                  setCodeMirror1(data.codemirrorcontent1 && data.codemirrorcontent1);
+                  setTextArea1(data.mirrortextareacontent1 && data.mirrortextareacontent1);
+                  setCodeMirror2(data.codemirrorcontent2 && data.codemirrorcontent2);
+                  setTextArea2(data.mirrortextareacontent2 && data.mirrortextareacontent2);
+                  setDate(data.date && data.date);
+                  setUid(data.uid && data.uid);
+                  
+                  console.log(index)
+                }} 
+                userimage={data.imgUrl}
+                icerikbasligi={data.icerikbasligi} 
+                name={data.username}
+                date={data.date}/>
+                {/* </NavLink> */}
+                {/* <BlogContentBox2/> */}
+              </>)
+              }
                 </ul>
               </div>
               <button className='blogContentBoxGoToAllText' >
                 <h1>
-                  Go To All
+                  <NavLink to="/blog" >
+                    Go To All
+                  </NavLink>
                 </h1>
                 <i class="fa-solid fa-chevron-right"></i>
               </button>

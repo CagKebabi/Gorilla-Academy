@@ -31,13 +31,14 @@ function CategoriesContentList() {
     const {textArea2,setTextArea2} = useContext(ContentBoxClickContext);
     const {date,setDate} = useContext(ContentBoxClickContext);
     const {uid,setUid} = useContext(ContentBoxClickContext);
+    const {icerikKtegorisi,seticerikKtegorisi} = useContext(ContentBoxClickContext);
 
     const [denemes,setDenemes] = useState("")
 
     const {categoryName,setCategoryName} = useContext(CategoryNameContext);
     const categoryImage = [htmlLogo,cssLogo,javascriptLogo,reactLogo,vueLogo,cplusLogo,csharpLogo,kotlinLogo,swiftLogo,sassLogo,bootstrapLogo,firebaseLogo];
-    const categoryNamee = ["html","css","javascrıpt","react","vue","cplus","csharp","kotlin","swift","sass","bootstrap","firebase"]
-
+    const categoryNamee = ["html","css","javascrıpt","react","vue","cplus","csharp","kotlin","swift","sass","bootstrap","firebase"];
+    const categoryName2 = ["html","css","javascript","react","vue","c++","c#","kotlin","swift","sass","bootstrap","firebase"];
 
     const fetchAll = (e) => {
         e && e.preventDefault();
@@ -80,11 +81,12 @@ function CategoriesContentList() {
                   setTextArea2(data.mirrortextareacontent2 && data.mirrortextareacontent2);
                   setDate(data.date && data.date);
                   setUid(data.uid && data.uid);
+                  seticerikKtegorisi(data.icerikKtegorisi && data.icerikKtegorisi)
                   
                   console.log(index)
                 }} 
                 categoryimage={categoryImage[categoryNamee.indexOf(data.icerikKtegorisi)]}
-                icerikkategorisi = {data.icerikKtegorisi}
+                icerikkategorisi = {categoryName2[categoryName.indexOf(data.icerikKtegorisi)]}
                 icerikbasligi={data.icerikbasligi} 
                 name={data.username}
                 date={data.date}/>

@@ -50,6 +50,32 @@ function Header() {
             //alert(e.message)
         })
     },[])
+    // window.onload = () => {
+    //     window.onload() && getDoc(doc(db, "users", useruid)).then(docSnap => {
+    //                 if (docSnap.exists()) {
+    //                   setUsernamee(docSnap.data().username);
+    //                   setUnvan(docSnap.data().email)
+    //                 } else {
+    //                   console.log("No such document!");
+    //                   console.log(useruid);
+    //                 }
+    //               })
+    // }
+
+    // window.onload = () => {
+    // window.onload() && getDownloadURL(ref(storage, `profileImages/${useruid}`))
+    //     .then((url) => {
+    //         const element = document.getElementById('headerUserImage')
+    //         element.setAttribute('src',url);
+    //         console.log(url)
+    //     })
+    //     .catch((e) => {
+    //         //alert(e.message)
+    //     })
+    // }
+
+    // useEffect(() => {getUserInformations();getUserImage()},[])
+
 
   return (
     <>

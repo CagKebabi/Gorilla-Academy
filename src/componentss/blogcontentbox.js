@@ -1,22 +1,25 @@
 import React from 'react'
 import '../style/blogcontentbox.css'
 import gorillasrc from '../media/gorilla.jpg'
+import { NavLink } from 'react-router-dom'
 
-function BlogContentBox() {
+function BlogContentBox(props) {
   return (
     <>
-        <li className='blogContentBoxContainer' >
+        <li className='blogContentBoxContainer' onClick={props.click} >
+            <NavLink to="/contentshow">
             <div className='blogContentBoxImageContainer' >
-                <img src={gorillasrc} alt="" />
+                <img src={props.userimage} alt="" />
             </div>
             <div className='blogContentBoxTextContainer' >
                 <p>
-                    is the title of blog content that contains an article on a topic
+                    {props.icerikbasligi}
                 </p>
                 <h1>
-                    4 days ago
+                    {props.date}
                 </h1>
             </div>
+            </NavLink>
         </li>
     </>
   )

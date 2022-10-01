@@ -85,7 +85,9 @@ function CreateContent() {
         )
         setIcerikBasligi("");
         setCount([]);
-        setTextArea("")
+        setTextArea("");
+        console.log("codemirror:",codemirrorContent);
+        console.log("textare",textareaContent)
     }
 
 

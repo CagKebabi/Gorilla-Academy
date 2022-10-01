@@ -2,8 +2,12 @@
     display: flex;
     margin-top: 6%;
     padding-left: 5%;
+    a{
+        padding: initial;
+        align-items: center;
+    }
     .blogContentBoxImageContainer {
-        width: 40%;
+        width: 22%;
         img {
             width: 4vw;
             border-radius: 100%;

@@ -25,6 +25,7 @@ function CategoriesContentList() {
     const {uid,setUid} = useContext(ContentBoxClickContext);
 
     const [denemes,setDenemes] = useState("")
+    const [blogContents,setBlogContents] = useState([])
 
     const {categoryName,setCategoryName} = useContext(CategoryNameContext);
 
@@ -47,7 +48,26 @@ function CategoriesContentList() {
   
   
   useEffect(fetchAll,[]);
-  console.log(categoryName)
+  
+
+    const fetchAllBlog = (e) => {
+      e && e.preventDefault();
+      db.collection("blog")
+      .get()
+      .then((snapshot) => {
+          if(snapshot.docs.length>0){
+              snapshot.docs.forEach((doc) => {
+                  setBlogContents((prev) => {
+                      return [...prev,doc.data()];
+                  });
+              });
+          };
+      });
+      console.log(denemes)
+    };
+  
+  
+  useEffect(fetchAllBlog,[]);
 
   return (
     <>
@@ -141,15 +161,41 @@ function CategoriesContentList() {
               </div>
               <div>
                 <ul>
-                  <BlogContentBox/>
-                  <BlogContentBox/>
-                  <BlogContentBox/>
-                  <BlogContentBox/>
+              {
+              blogContents && blogContents.map((data,index) => 
+              <>
+              {/* <NavLink to="contentshow" className="blogPageContentBoxContainer"> */}
+                <BlogContentBox 
+                 click={() => {
+                  setClickIndex(data.icerikbasligi);
+                  setUserName(data.username && data.username);
+                  setUserImage(data.imgUrl && data.imgUrl);
+                  setIcerikBasligi(data.icerikbasligi && data.icerikbasligi);
+                  setText(data.textareacontent1 && data.textareacontent1);
+                  setCodeMirror1(data.codemirrorcontent1 && data.codemirrorcontent1);
+                  setTextArea1(data.mirrortextareacontent1 && data.mirrortextareacontent1);
+                  setCodeMirror2(data.codemirrorcontent2 && data.codemirrorcontent2);
+                  setTextArea2(data.mirrortextareacontent2 && data.mirrortextareacontent2);
+                  setDate(data.date && data.date);
+                  setUid(data.uid && data.uid);
+                  
+                  console.log(index)
+                }} 
+                userimage={data.imgUrl}
+                icerikbasligi={data.icerikbasligi} 
+                name={data.username}
+                date={data.date}/>
+                {/* </NavLink> */}
+                {/* <BlogContentBox2/> */}
+              </>)
+              }
                 </ul>
               </div>
               <button className='blogContentBoxGoToAllText' >
                 <h1>
+                  <NavLink to="/blog">
                   Go To All
+                  </NavLink>
                 </h1>
                 <i class="fa-solid fa-chevron-right"></i>
               </button>

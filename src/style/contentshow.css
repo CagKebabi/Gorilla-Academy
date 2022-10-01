@@ -131,7 +131,7 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
 }
-.calendar .dates button {
+.calendar .dates .contentShowButtonClose {
   cursor: pointer;
   outline: 0;
   border: 0;
@@ -143,14 +143,28 @@
   border-radius: 50px;
   transition-duration: 0.2s;
 }
-.calendar .dates button:first-child {
+.calendar .dates .contentShowButtonClose:first-child {
   grid-column: 3;
 }
-.calendar .dates button:hover {
+.calendar .dates .contentShowButtonClose:hover {
   background: #eee;
 }
-.calendar .dates button:focus {
-  background: #5d4cc6;
-  color: #fff;
-  font-weight: 600;
+.calendar .dates .contentShowButtonActive {
+  cursor: pointer;
+  background-color: #5d4cc6;
+  color: #eee;
+  outline: 0;
+  border: 0;
+  font-family: "Roboto Mono", monospace;
+  font-size: 1vw;
+  justify-self: center;
+  align-self: center;
+  border-radius: 50px;
+  transition-duration: 0.2s;
+}
+.calendar .dates .contentShowButtonActive:first-child {
+  grid-column: 3;
+}
+.calendar .dates .contentShowButtonActive:hover {
+  background: #eee;
 }/*# sourceMappingURL=contentshow.css.map */
