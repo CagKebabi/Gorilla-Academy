@@ -42,7 +42,14 @@ function Register() {
         await setDoc(doc(db,"users",useruid),{
                 uid : useruid,
                 username : username,
-                email : email
+                email : emaill,
+                age : "",
+                country : "Türkiye",
+                github : "",
+                linkedin : "",
+                stackoverflow : "",
+                twitter : "",
+                
         })
     }
     

@@ -9,6 +9,9 @@ import TextArea from './textarea';
 import CodeMirrorr from '../componentss/codemirror'
 import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "../firebase"
+import {NavLink} from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function CreateContent() {
@@ -16,10 +19,9 @@ function CreateContent() {
 
     const user = firebase.auth().currentUser;
     const userUid = localStorage.getItem('useruid');
-    const day = new Date().getDay();
-    const month = new Date().getMonth();
-    const year = new Date().getFullYear();
-    
+    const date = new Date().toLocaleDateString();
+
+
     const [username,setUserName] = useState()
     const [icerikBasligi,setIcerikBasligi] = useState("");
     const [icerikKategorisiInput,SetIcerikKategorisiInput] = useState("");
@@ -34,7 +36,7 @@ function CreateContent() {
         getDoc(doc(db, "users", userUid)).then(docSnap => {
             if (docSnap.exists()) {
                 setUserName(docSnap.data().username);
-                console.log(docSnap.data().username)
+                console.log(docSnap.data().username);
             } else {
               console.log("No such document!");
             }
@@ -50,13 +52,19 @@ function CreateContent() {
             setImageUrl(url)
         })
         .catch((e) => {
-            //alert(e.message)
+            // console.log(day+"."+month+"."+year)
         })
     },[])
 
+
+    useEffect(() => {
+        if(userUid === "XPacZJioH5OI3NnCFjfEj1vIiN13") {
+            document.getElementById('blogCategoryBox').style.display = "block"
+        }
+    })
     const yayinla = (e) => {
-        e.preventDefault()
-        setDoc(doc(db,icerikKategorisiInput.toLocaleLowerCase(),icerikBasligi),{
+        e && e.preventDefault()
+        setDoc(doc(db,icerikKategorisiInput,icerikBasligi),{
                 "username" : username,
                 "uid" : user.uid,
                 "icerikbasligi" : icerikBasligi,
@@ -71,7 +79,7 @@ function CreateContent() {
                 "codemirrorcontent4" : codemirrorContent[3],
                 "mirrortextareacontent4" : textareaContent[3],
                 "imgUrl" : imageUrl,
-                "date" : day+"."+month+"."+year
+                "date" : date
             }
 
         )
@@ -79,9 +87,33 @@ function CreateContent() {
         setCount([]);
         setTextArea("")
     }
+
+
+    const notify = () => toast.success('İçerik Yayınlandı ✍🏻', {
+        position: "top-right",
+        theme: "colored",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });;
+
   return (
     <div className='App'> 
         <Header2/>
+        <ToastContainer
+            position="top-right"
+            autoClose={1000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            />
         <div className='createContentContainer' >
             <div className='createContentInputsContainer' >
                 <ul>
@@ -89,19 +121,28 @@ function CreateContent() {
                         <input type="text" placeholder='İçerik Başlığı' onChange={(e) => {setIcerikBasligi(e.target.value)}} />
                     </li>
                     <li>
-                        <select onChange={(e) => {SetIcerikKategorisiInput(e.target.value)}} >
+                        <select onChange={(e) => {SetIcerikKategorisiInput(e.target.value);console.log(icerikKategorisiInput)}} >
                             <option value="BELIRTILMEDI">Kategori</option>
-                            <option value="HTML">HTML</option>
-                            <option value="CSS">CSS</option>
-                            <option value="JAVASCRIPT">JAVASCRIPT</option>
-                            <option value="REACT">REACT</option>
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="javascrıpt">JAVASCRIPT</option>
+                            <option value="react">REACT</option>
+                            <option value="vue">VUE</option>
+                            <option value="cplus">C++</option>
+                            <option value="csharp">C#</option>
+                            <option value="kotlin">KOTLIN</option>
+                            <option value="swift">SWIFT</option>
+                            <option value="sass">SASS</option>
+                            <option value="bootstrap">BOOTSTRAP</option>
+                            <option value="firebase">FIREBASE</option>
+                            <option value="blog" id='blogCategoryBox' style={{display:"none"}} >BLOG</option>
                         </select>
                     </li>
                     <li>
-                        <button type='submit' onClick={yayinla} >YAYINLA</button>
+                        <button type='submit' onClick={() => {yayinla();notify()}} >YAYINLA</button>
                     </li>
                     <li>
-                        <button>VAZGEÇ</button>
+                        <button><NavLink to="/" >VAZGEÇ</NavLink></button>
                     </li>
                 </ul>
             </div>

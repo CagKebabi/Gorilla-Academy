@@ -13,8 +13,8 @@ function ContentBox(props) {
         </div>
         <div className='contentBoxDiv2' >
           <div>
-            <img src={cimage} alt="" />
-            <h1>C#</h1>
+            <img src={props.categoryimage} alt="" />
+            <h1>{props.icerikkategorisi}</h1>
           </div>
         </div>
         <div className='contentBoxDiv3' >

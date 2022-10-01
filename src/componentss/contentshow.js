@@ -41,6 +41,7 @@ function ContentShow() {
             //alert(e.message)
         })
     },[])
+    
   return (
     <div className='App'> 
     <Header/>

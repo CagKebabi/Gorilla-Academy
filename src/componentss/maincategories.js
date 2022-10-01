@@ -1,5 +1,5 @@
 import React from 'react'
-import '../style/main.css'
+import '../style/maincategories.css'
 import db from "../firebase"
 import { doc, getDoc } from "firebase/firestore";
 import gorillaImage from '../media/chara06.png'
@@ -7,9 +7,12 @@ import ContentBox from './contentbox'
 import BlogContentBox from './blogcontentbox'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import CategoryNameContext from '../context/categorynamecontext';
 import { useContext } from 'react'
 import ContentBoxClickContext from "../context/contentboxclickcontext"
-import { NavLink } from 'react-router-dom'
+
+import { Outlet } from 'react-router-dom';
+
 import cssLogo from '../media/cssLogo.png'
 import htmlLogo from '../media/htmlLogo.png'
 import javascriptLogo from '../media/javascriptLogo.png'
@@ -22,8 +25,9 @@ import firebaseLogo from '../media/firebaseLogo.png'
 import vueLogo from '../media/vueLogo.png'
 import swiftLogo from '../media/swiftLogo.png'
 import kotlinLogo from '../media/kotlinLogo.png'
+import { NavLink } from 'react-router-dom'
 
-function Main() {
+function MainCategories() {
   const {clickIndex,setClickIndex} = useContext(ContentBoxClickContext);
   const {username,setUserName} = useContext(ContentBoxClickContext);
   const {userImage,setUserImage} = useContext(ContentBoxClickContext);
@@ -36,16 +40,14 @@ function Main() {
   const {date,setDate} = useContext(ContentBoxClickContext);
   const {uid,setUid} = useContext(ContentBoxClickContext);
   const [denemes,setDenemes] = useState([]);
-  const [username2,setusername2] = useState("");
-  const useruid = localStorage.getItem("useruid")
 
-  const categoryImage = [htmlLogo,cssLogo,javascriptLogo,reactLogo,vueLogo,cplusLogo,csharpLogo,kotlinLogo,swiftLogo,sassLogo,bootstrapLogo,firebaseLogo];
-  const categoryName = ["html","css","javascrıpt","react","vue","cplus","csharp","kotlin","swift","sass","bootstrap","firebase"]
+  const [categoryClick,setCategoryClick] = useState(false);
+  const {categoryName,setCategoryName} = useContext(CategoryNameContext);
 
 
   const fetchAll = (e) => {
       e && e.preventDefault();
-      db.collection('html')
+      db.collection(categoryName)
       .get()
       .then((snapshot) => {
           if(snapshot.docs.length>0){
@@ -59,64 +61,22 @@ function Main() {
       console.log(denemes)
   };
 
+
 useEffect(fetchAll,[db]);
 
-// const heightHandle = () => {
-//   const element = document.getElementById('contentBoxSection');
-//   // element.style.height = "15px";
-//   element.style.height = (element.scrollHeight)+"px";
-// }
 
-useEffect(() => {
-  getDoc(doc(db, "users", useruid)).then(docSnap => {
-      if (docSnap.exists()) {
-        setusername2(docSnap.data().username);
-      } else {
-        console.log("No such document!");
-        console.log(useruid);
-      }
-    })
-},[])
+const categoryClicked = () => {
+  setCategoryClick(true);
+  console.log(categoryName);
+}
 
-  return (
+return (
     <>
         <main className='main' >
-          <section className='mainSection1' >
-          <div className='mainSection1WelcomeImageSide' >
+          <section className='mainCategoriesSection1' >
             <div>
-            <img src={gorillaImage} alt="" />
-            </div>
-          </div>
-            <div className='mainSection1WelcomeContainer' >
-              <div className='mainSection1WelcomeUserSide' >
-                <div className='mainSection1WelcomeTextContainer' >
-                  <h1>Hoşgeldin {username2}!</h1>
-                  <h2>Welcome home! The environment is fine for you</h2>
-                  <h3>You can work.</h3>
-                </div>
-                <div className='mainSection1WelcomeIconContainer' >
-                  <div>
-                    <i class="fa-brands fa-github WelcomeIcon1"></i>
-                    <i class="fa-brands fa-stack-overflow WelcomeIcon2"></i>
-                    <i class="fa-brands fa-twitter WelcomeIcon3 "></i>
-                    <i class="fa-brands fa-linkedin-in WelcomeIcon4 "></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className='mainSection1LastUploadedContainer' >
-              <div className='mainSection1LastUploadedText' >
-                <h1>Last uploaded</h1>
-              </div>
-              <div className='mainSection1LastUploadedTitles' >
-                <div className='productTextDiv' >PRODUCT</div>
-                <div>CATEGORY</div>
-                <div>ORDER STATUS</div>
-                <div>ACTIONS</div>
-              </div>
-            </div>
-            <div>
+              <Outlet/>
+              {/* <div className={categoryClick ? 'categoryPageCategoryContentsContainer' : 'categoryPageCategoryContentsContainerClose'} >
               {
               denemes.map((data,index) => 
               <>
@@ -137,14 +97,63 @@ useEffect(() => {
                   
                   console.log(index)
                 }} 
-                categoryimage={categoryImage[categoryName.indexOf(data.icerikKtegorisi)]}
-                icerikkategorisi = {data.icerikKtegorisi}
                 icerikbasligi={data.icerikbasligi} 
                 name={data.username}
                 date={data.date}/>
                 </NavLink>
               </>)
               }
+              </div> */}
+              {/* <div className={categoryClick ? 'categoryPageCategoryListContainerClose' : 'categoryPageCategoryListContainer'} >
+                <div onClick={(e) => {setCategoryClick(true);setCategoryName(e.target.id)}}>                                         
+                  <img id='html' src={htmlLogo} alt="" />
+                  <h1>HTML</h1>
+                </div>
+                <div id='css' onClick={(e) => {categoryClicked(e.target.id);setCategoryName(e.target.id)}}>
+                  <img  src={cssLogo} alt="" />
+                  <h1>CSS</h1>
+                </div>
+                <div  onClick={(e) => {categoryClicked(e.target.id);setCategoryName(e.target.id)}}>
+                  <img id='javascrıpt' src={javascriptLogo} alt="" />
+                  <h1>JAVASCRIPT</h1>
+                </div>
+                <div  onClick={(e) => {categoryClicked(e.target.id);setCategoryName(e.target.id)}}>
+                  <img id='react' src={reactLogo} alt="" />
+                  <h1>REACT</h1>
+                </div>
+                <div  onClick={(e) => {categoryClicked(e.target.id);setCategoryName(e.target.id)}}>
+                  <img id='vue' src={vueLogo} alt="" />
+                  <h1>VUE</h1>
+                </div>
+                <div  onClick={(e) => {categoryClicked(e.target.id);setCategoryName(e.target.id)}}>
+                  <img id='cplus' src={cplusLogo} alt="" />
+                  <h1>C++</h1>
+                </div>
+                <div  onClick={(e) => {categoryClicked(e.target.id);setCategoryName(e.target.id)}}>
+                  <img id='csharp' src={csharpLogo} alt="" />
+                  <h1>C#</h1>
+                </div>
+                <div  onClick={(e) => {categoryClicked(e.target.id);setCategoryName(e.target.id)}}>
+                  <img id='kotlin' src={kotlinLogo} alt="" />
+                  <h1>KOTLIN</h1>
+                </div>
+                <div  onClick={(e) => {categoryClicked(e.target.id);setCategoryName(e.target.id)}}>
+                  <img id='swift' src={swiftLogo} alt=""/>
+                  <h1>SWIFT</h1>
+                </div>
+                <div  onClick={(e) => {categoryClicked(e.target.id);setCategoryName(e.target.id)}}>
+                  <img id='sass' src={sassLogo} alt="" />
+                  <h1>SASS</h1>
+                </div>
+                <div  onClick={(e) => {categoryClicked(e.target.id);setCategoryName(e.target.id)}}>
+                  <img id='bootstrap' src={bootstrapLogo} alt="" onClick={(e) => {categoryClicked(e.target.id)}} />
+                  <h1>BOOTSTRAP</h1>
+                </div>
+                <div  onClick={(e) => {categoryClicked(e.target.id);setCategoryName(e.target.id)}}>
+                  <img id='firebase' src={firebaseLogo} alt="" />
+                  <h1>FIREBASE</h1>
+                </div>
+              </div> */}
             </div>
           </section>  
           <section className='mainSection2' >
@@ -222,4 +231,4 @@ useEffect(() => {
   )
 }
 
-export default Main
+export default MainCategories

@@ -53,12 +53,12 @@
                 position: relative;
                 &::after {
                     content: " ";
-                    width: 1px;
+                    width: 1%;
                     height: 100%;
                     background-color: white;
                     position: absolute;
                     right: -1%;
-                    z-index: 999;
+                    z-index: 9;
                 }
                 i{
                     font-size: 1vw;
@@ -75,6 +75,7 @@
         }
     }
 }
+
 
 
 

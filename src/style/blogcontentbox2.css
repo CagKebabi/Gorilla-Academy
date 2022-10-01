@@ -1,0 +1,44 @@
+.blogPageContentBoxContainer {
+  display: flex;
+  align-items: center;
+  width: 47%;
+  padding: 1%;
+  margin-bottom: 2%;
+  box-shadow: 0px 7px 38px -14px rgba(0, 0, 0, 0.72);
+  transition-duration: 0.2s;
+}
+.blogPageContentBoxContainer:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.blogPageContentBoxContainer a {
+  box-shadow: initial;
+  margin-bottom: initial;
+  padding: initial;
+  width: initial;
+  transition-duration: 0.1s;
+}
+.blogPageContentBoxContainer .blogContentBoxImageContainer {
+  width: 30%;
+}
+.blogPageContentBoxContainer .blogContentBoxImageContainer img {
+  width: 4vw;
+  border-radius: 100%;
+  width: 100%;
+}
+.blogPageContentBoxContainer .blogContentBoxTextContainer {
+  margin-left: 5%;
+}
+.blogPageContentBoxContainer .blogContentBoxTextContainer p {
+  font-size: 0.9vw;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 600;
+}
+.blogPageContentBoxContainer .blogContentBoxTextContainer h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.4);
+  margin-top: 6%;
+  font-size: 0.7vw;
+  font-weight: 600;
+}/*# sourceMappingURL=blogcontentbox2.css.map */

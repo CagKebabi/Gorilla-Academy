@@ -9,6 +9,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { UserNameProvider } from './context/usernamecontext';
 import { ContentContextProvider } from './context/contentscontext';
 import { ContentBoxClickContextProvider } from './context/contentboxclickcontext';
+import { CategoryNameContextProvider } from './context/categorynamecontext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,7 +18,9 @@ root.render(
     <ContentContextProvider>
       <UserNameProvider>
         <ContentBoxClickContextProvider>
+          <CategoryNameContextProvider>
            <App />
+          </CategoryNameContextProvider>
         </ContentBoxClickContextProvider>
       </UserNameProvider>
     </ContentContextProvider>

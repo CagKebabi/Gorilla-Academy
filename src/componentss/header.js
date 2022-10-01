@@ -19,7 +19,9 @@ import firebase from 'firebase/compat/app';
 function Header() {
     const useruid = localStorage.getItem("useruid")
     const [isActive,setIsActive] = useState(false);
-    const [usernamee,setUsernamee] = useState("")
+    const [usernamee,setUsernamee] = useState("");
+    const [unvan,setUnvan] = useState("");
+
     const dropDownHandle = () => {
         isActive ? setIsActive(false) : setIsActive(true);
         console.log(isActive);
@@ -29,6 +31,7 @@ function Header() {
         getDoc(doc(db, "users", useruid)).then(docSnap => {
             if (docSnap.exists()) {
               setUsernamee(docSnap.data().username);
+              setUnvan(docSnap.data().email)
             } else {
               console.log("No such document!");
               console.log(useruid);
@@ -76,7 +79,7 @@ function Header() {
                                         {usernamee}
                                     </h1>
                                     <h2>
-                                        Ünvan Belirtilmedi
+                                        {unvan}
                                     </h2>
                                 </div>
                                 <div className='headerDropDownIcon' onClick={dropDownHandle} >
