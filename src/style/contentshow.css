@@ -15,6 +15,7 @@
   align-items: center;
 }
 .contentShowContainer .createContentInputsContainer ul li:nth-child(1) img {
+  height: 3.5vw;
   width: 20%;
   border-radius: 50px;
 }

@@ -6,6 +6,7 @@ import ContentBoxClickContext from "../context/contentboxclickcontext"
 import { useContext,useState } from 'react';
 import db from '../firebase';
 import CategoryNameContext from '../context/categorynamecontext';
+import CategoryContentIndexeContext from '../context/categroycontentindexcontext';
 import BlogContentBox from './blogcontentbox';
 import BlogContentBox2 from './blogcontentbox2';
 import gorillaImage from '../media/chara06.png'
@@ -23,11 +24,13 @@ function CategoriesContentList() {
     const {textArea2,setTextArea2} = useContext(ContentBoxClickContext);
     const {date,setDate} = useContext(ContentBoxClickContext);
     const {uid,setUid} = useContext(ContentBoxClickContext);
+    const {icerikKtegorisi,seticerikKtegorisi} = useContext(ContentBoxClickContext);
 
     const [denemes,setDenemes] = useState("")
     const [blogContents,setBlogContents] = useState([])
 
-    const {categoryName,setCategoryName} = useContext(CategoryNameContext);
+    const {blogArrayIndex,setblogArrayIndex} = useContext(CategoryContentIndexeContext);//
+
 
 
     const fetchAll = (e) => {
@@ -35,11 +38,15 @@ function CategoriesContentList() {
         db.collection("blog")
         .get()
         .then((snapshot) => {
+          setblogArrayIndex([])
             if(snapshot.docs.length>0){
                 snapshot.docs.forEach((doc) => {
                     setDenemes((prev) => {
                         return [...prev,doc.data()];
                     });
+                    setblogArrayIndex((prev) => {
+                      return [...prev,doc.data().icerikbasligi]
+                    })
                 });
             };
         });
@@ -92,7 +99,7 @@ function CategoriesContentList() {
                   setTextArea2(data.mirrortextareacontent2 && data.mirrortextareacontent2);
                   setDate(data.date && data.date);
                   setUid(data.uid && data.uid);
-                  
+                  seticerikKtegorisi(data.icerikKtegorisi && data.icerikKtegorisi)
                   console.log(index)
                 }} 
                 userimage={data.imgUrl}

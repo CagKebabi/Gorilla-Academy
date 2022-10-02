@@ -43,26 +43,32 @@ function Main() {
   const [username2,setusername2] = useState("");
   const useruid = localStorage.getItem("useruid");
 
-  const {html,setHtml} = useContext(CategoryContentIndexeContext);
+  const {contentArrayIndex,setContentArrayIndex} = useContext(CategoryContentIndexeContext);//
+  const {blogArrayIndex,setblogArrayIndex} = useContext(CategoryContentIndexeContext);//
 
   const categoryImage = [htmlLogo,cssLogo,javascriptLogo,reactLogo,vueLogo,cplusLogo,csharpLogo,kotlinLogo,swiftLogo,sassLogo,bootstrapLogo,firebaseLogo];
   const categoryName = ["html","css","javascrıpt","react","vue","cplus","csharp","kotlin","swift","sass","bootstrap","firebase"];
   const categoryName2 = ["html","css","javascript","react","vue","c++","c#","kotlin","swift","sass","bootstrap","firebase"];
-
+console.log(contentArrayIndex)
+console.log(blogArrayIndex)
   const fetchAll = (e) => {
       e && e.preventDefault();
       db.collection('html')
       .get()
       .then((snapshot) => {
+        setContentArrayIndex([])
           if(snapshot.docs.length>0){
               snapshot.docs.forEach((doc) => {
                   setDenemes((prev) => {
                       return [...prev,doc.data()];
                   });
+                  setContentArrayIndex((prev) => {
+                    return [...prev,doc.data().icerikbasligi]
+                  })
               });
           };
       });
-      console.log(denemes)
+      // console.log(denemes)
   };
 
 useEffect(fetchAll,[db]);
@@ -73,19 +79,23 @@ const fetchAllBlog = (e) => {
   db.collection("blog")
   .get()
   .then((snapshot) => {
+    setblogArrayIndex([])///
       if(snapshot.docs.length>0){
           snapshot.docs.forEach((doc) => {
               setBlogContents((prev) => {
                   return [...prev,doc.data()];
               });
+              setblogArrayIndex((prev) => {////
+                return [...prev,doc.data().icerikbasligi]
+              })
           });
       };
   });
-  console.log(denemes)
+  // console.log(denemes)
 };
 
 
-useEffect(fetchAllBlog,[]);
+useEffect(fetchAllBlog,[db]);
 
 // const heightHandle = () => {
 //   const element = document.getElementById('contentBoxSection');
@@ -246,7 +256,8 @@ useEffect(() => {
                   setTextArea2(data.mirrortextareacontent2 && data.mirrortextareacontent2);
                   setDate(data.date && data.date);
                   setUid(data.uid && data.uid);
-                  
+                  seticerikKtegorisi(data.icerikKtegorisi && data.icerikKtegorisi)
+
                   console.log(index)
                 }} 
                 userimage={data.imgUrl}

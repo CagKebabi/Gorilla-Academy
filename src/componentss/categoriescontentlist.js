@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom'
 import ContentBox from './contentbox'
 import ContentBoxClickContext from "../context/contentboxclickcontext"
+import CategoryContentIndexeContext from '../context/categroycontentindexcontext';
 import { useContext,useState } from 'react';
 import db from '../firebase';
 import CategoryNameContext from '../context/categorynamecontext';
@@ -40,20 +41,28 @@ function CategoriesContentList() {
     const categoryNamee = ["html","css","javascrıpt","react","vue","cplus","csharp","kotlin","swift","sass","bootstrap","firebase"];
     const categoryName2 = ["html","css","javascript","react","vue","c++","c#","kotlin","swift","sass","bootstrap","firebase"];
 
+
+    const {contentArrayIndex,setContentArrayIndex} = useContext(CategoryContentIndexeContext);//
+
+
     const fetchAll = (e) => {
         e && e.preventDefault();
         db.collection(categoryName)
         .get()
         .then((snapshot) => {
+          setContentArrayIndex([])
             if(snapshot.docs.length>0){
                 snapshot.docs.forEach((doc) => {
                     setDenemes((prev) => {
                         return [...prev,doc.data()];
                     });
+                    setContentArrayIndex((prev) => {
+                      return [...prev,doc.data().icerikbasligi]
+                    })
                 });
             };
         });
-        console.log(denemes)
+        console.log("bu content array indexi",contentArrayIndex)
     };
   
   
@@ -86,7 +95,7 @@ function CategoriesContentList() {
                   console.log(index)
                 }} 
                 categoryimage={categoryImage[categoryNamee.indexOf(data.icerikKtegorisi)]}
-                icerikkategorisi = {categoryName2[categoryName.indexOf(data.icerikKtegorisi)]}
+                icerikkategorisi = {categoryName2[categoryNamee.indexOf(data.icerikKtegorisi)]}
                 icerikbasligi={data.icerikbasligi} 
                 name={data.username}
                 date={data.date}/>

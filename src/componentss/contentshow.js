@@ -26,7 +26,9 @@ import db from "../firebase"
 
 
 function ContentShow() {
-    const {html,setHtml} = useContext(CategoryContentIndexeContext);
+    const {contentArrayIndex,setContentArrayIndex} = useContext(CategoryContentIndexeContext);
+    const {blogArrayIndex,setblogArrayIndex} = useContext(CategoryContentIndexeContext);////////////
+
     const {css,setCss} = useContext(CategoryContentIndexeContext);
     const {javascript,setJavascript} = useContext(CategoryContentIndexeContext);
     const {react,setReact} = useContext(CategoryContentIndexeContext);
@@ -60,55 +62,74 @@ function ContentShow() {
     const [image,setImage] = useState()
 
     localStorage.setItem('icerikBasligi',icerikBasligi);
+    localStorage.setItem('contentArrayLS',contentArrayIndex);
+    localStorage.setItem('icerikKategori2',contentArrayIndex);
+    let budur = [localStorage.getItem('contentArrayLS',contentArrayIndex)];
+    let budur2 = [localStorage.getItem('contentArrayLS',icerikKtegorisi)];
+
+    const [of,setOf] = useState([])
 
 
 
 
-
+// console.log("BLOGBLOGBLOGLBOG",blogArrayIndex)
+// console.log("kategoriiiiiiiii",icerikKtegorisi)
 
     
 
 
 
 
-    // const fetchAll = (e) => {
-    //     e && e.preventDefault();
-    //     db.collection(icerikKtegorisi)
-    //     .get()
-    //     .then((snapshot) => {
-    //         if(snapshot.docs.length>0){
-    //             snapshot.docs.forEach((doc) => {
-    //                 setUserName(doc.data().username);
-    //                 setIcerikBasligi(doc.data().icerikbasligi);
-    //                 setDate()
-    //             });
-    //         };
-    //     });
-    //     // console.log(denemes)
-    // };
+//     const fetchAll = (e) => {
+//         e && e.preventDefault();
+//         db.collection(icerikKtegorisi)
+//         .get()
+//         .then((snapshot) => {
+//             setOf([])//
+//             if(snapshot.docs.length>0){
+//                 snapshot.docs.forEach((doc) => {
+//                     setOf((prev) => {
+//                         return [...prev,doc.data().icerikbasligi]
+//                       })
+//                 });
+//             };
+//         });
+//         console.log(of)
+//     };
 
-
+// useEffect(fetchAll,[])
   
 
-    const [count,setCount] = useState(8)
+    const [count,setCount] = useState(icerikKtegorisi == "blog" ? blogArrayIndex.indexOf(icerikBasligi) : contentArrayIndex.indexOf(icerikBasligi))
+
+
+        // const [count,setCount] = useState(blogArrayIndex.indexOf(icerikBasligi))
+
 
     const countIncrease = () => {
-        setCount(count<html.length-1 ? count+1 : 0);
+        let category = icerikKtegorisi == "blog" ? blogArrayIndex : contentArrayIndex;
+        setCount(count < category.length-1 ? count+1 : 0);
         console.log(count);
-        console.log(html[count]);
-        console.log(username,text)
+        // console.log(contentArrayIndex[count]);
+        // // console.log(username,text);
+        // console.log(contentArrayIndex);
+
     }
 
     const countDecrease = () => {
-        setCount(count > 0 ? count-1 : html.length-1);
+        let category = icerikKtegorisi == "blog" ? blogArrayIndex : contentArrayIndex;
+        setCount(count > 0 ? count-1 : category.length-1);
         console.log(count);
-        console.log(html[count]);
-        console.log(username,text)
+        // console.log(contentArrayIndex[count]);
+        // console.log(username,text)
     }
 
 
     useEffect(() => {
-        getDoc(doc(db, icerikKtegorisi, html[count])).then(docSnap => {
+        getDoc(doc(db, icerikKtegorisi, icerikKtegorisi=="blog" ? blogArrayIndex[count] : contentArrayIndex[count] )).then(docSnap => {
+            // getDoc(doc(db, icerikKtegorisi, blogArrayIndex[count])).then(docSnap => {
+            console.log("BLOG COUNT",blogArrayIndex[count]);
+            console.log("BLOG COUNT",contentArrayIndex[count]);
             if (docSnap.exists()) {
               setUserName(docSnap.data().username && docSnap.data().username);
               setIcerikBasligi(docSnap.data().icerikbasligi && docSnap.data().icerikbasligi)
@@ -143,8 +164,8 @@ useEffect(() => {
   
 
       useEffect(() => {
-        setImage(categoryImage[categoryName.indexOf(icerikKtegorisi)]);
-        setCategory(categoryName2[categoryName.indexOf(icerikKtegorisi)])
+        setImage(categoryImage[categoryName.indexOf(icerikKtegorisi)] && categoryImage[categoryName.indexOf(icerikKtegorisi)]);
+        setCategory(categoryName2[categoryName.indexOf(icerikKtegorisi)] && categoryName2[categoryName.indexOf(icerikKtegorisi)])
     },[])
 
     // const [calendarIndex,setCalendarIndex] = useState([])
