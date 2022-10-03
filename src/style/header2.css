@@ -62,12 +62,10 @@ header .headerDropDownPopUpClose {
 }
 
 .headerUserInformationsContainer img {
-  width: 22%;
+  width: 4vw;
+  height: 4vw;
   border-radius: 100px;
   margin-right: 2%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
   z-index: 100;
 }
 
@@ -132,7 +130,7 @@ header .headerDropDownPopUpClose {
 }
 .headerUserSideContainer .headerUserSideContainer2 .headerUserInformationsContainer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   width: 60%;
 }
 .headerUserSideContainer .headerUserSideContainer2 .headerUserInformationsContainer .headerUserInformationsContainer2 {
@@ -159,8 +157,8 @@ header .headerDropDownPopUpClose {
   z-index: 100;
   margin-bottom: 8%;
   border-radius: 50%;
-  width: 8%;
-  height: 31%;
+  width: 1.1vw;
+  height: 1.1vw;
   display: block;
 }
 .headerUserSideContainer .headerUserSideContainer2 .headerUserInformationsContainer .headerUserInformationsContainer2 .headerDropDownIcon .headerDropDownIconMenuClose {
@@ -193,7 +191,7 @@ header .headerDropDownPopUpClose {
   display: block;
 }
 .headerDropDownIconUlActive li {
-  line-height: 6.5vh;
+  line-height: 3.3vw;
   font-size: 0.8vw;
   font-weight: 600;
   font-family: Arial, Helvetica, sans-serif;

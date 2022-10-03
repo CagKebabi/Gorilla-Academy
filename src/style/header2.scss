@@ -60,10 +60,10 @@ header {
 }
 
 .headerUserInformationsContainer img {
-    width: 22%;
+    width: 4vw;
+    height: 4vw;
     border-radius: 100px;
     margin-right: 2%;
-    height: fit-content;
     z-index: 100;
 }
 
@@ -135,7 +135,7 @@ header {
         }
         .headerUserInformationsContainer {
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-start;
             width: 60%;
             .headerUserInformationsContainer2 {
                 display: flex;
@@ -162,8 +162,8 @@ header {
                     z-index: 100;
                     margin-bottom: 8%;
                     border-radius: 50%;
-                    width: 8%;
-                    height: 31%;
+                    width: 1.1vw;
+                    height: 1.1vw;
                     display: block;
                     .headerDropDownIconMenuClose {
                         display: none;
@@ -200,7 +200,7 @@ header {
 .headerDropDownIconUlActive {
     display: block;
     li {
-        line-height: 6.5vh;
+        line-height: 3.3vw;
         font-size: .8vw;
         font-weight: 600;
         font-family: Arial, Helvetica, sans-serif;

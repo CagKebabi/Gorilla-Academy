@@ -60,9 +60,10 @@
             align-items: center;
             position: relative;
             img {
-                width: 10%;
+                width: 6vw;
+                height: 6vw;
                 border-radius: 50%;
-                border: 3px solid #5d4cc6;
+                border: .2vw solid #5d4cc6;
             }
             .editProfileSetImageIcon {
                 position: absolute;
@@ -117,9 +118,11 @@
             padding-top: 5%;
             div:nth-child(1) {
                 margin-right: 1%;
+                width: 45%;
             }   
             div:nth-child(2) {
                 margin-left: 1%;
+                width: 45%;
             }
             div {
                 display: flex;
@@ -129,9 +132,10 @@
                     padding-left: 10px;
                     margin: 3% 0 3% 0;
                     width: 95%;
-                    line-height: 5vh;
+                    line-height: 2.5vw;
                     border-radius: 25px;
-                    border: 2px solid rgba($color: #000000, $alpha: .2);
+                    border: .1vw solid rgba($color: #000000, $alpha: .2);
+                    font-size: 1vw;
                 }
             }
         }
@@ -142,7 +146,7 @@
             margin-top: 4%;
             button {
                 cursor: pointer;
-                height: 100%;
+                height: 2.6vw;
                 width: 25%;
                 border: none;
                 background-color: #5d4cc6;
@@ -158,15 +162,28 @@
         width: 20%;
         button {
             cursor: pointer;
-            width: 10%;
-            height: 4.5%;
+            position: relative;
+            width: 1.8vw;
+            height: 1.8vw;
             background-color: rgba($color: #000000, $alpha: .2);
             border-radius: 50px;
             border: none;
-            i{
-                color: #fafafa;
-                font-size: 1.2vw;
+            .editProfileCloseButton {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: initial;
+                width: 1.8vw;
+                height: 1.8vw;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                i{
+                    color: #fafafa;
+                    font-size: 1.2vw;
+                }
             }
+
         }
     }
 }

@@ -12,6 +12,7 @@ import { doc, getDoc } from "firebase/firestore";
 import {NavLink} from 'react-router-dom';
 import '../style/editprofile.css'
 import { ToastContainer, toast } from 'react-toastify';
+import defaultUser from '../media/defaultuser.jpg'
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -27,6 +28,7 @@ function EditProfile() {
     const {stackoverflow,setStackoverflow} = useContext(UserContext)
     const {twitter,setTwitter} = useContext(UserContext)
     const {email,setEmail} = useContext(UserContext)
+    const {unvan,setUnvan} = useContext(UserContext)
 
     const [imageUpload,setImageUpload] = useState(null);
 
@@ -39,7 +41,6 @@ function EditProfile() {
     const [stackoverflow2,setstackoverflow2] = useState("Stackoverflow");
     const [uid2,setUid2] = useState("");
     const [job,setjob] = useState("Ünvan");
-    const [unvan,setUnvan] = useState("")
 
     const [isProfileUpdate,setIsProfileUpdate] = useState(false);
 
@@ -53,9 +54,9 @@ function EditProfile() {
               setgithub2(docSnap.data().github);
               setlinkedin2(docSnap.data().linkedin);
               settwitter2(docSnap.data().twitter);
-              setstackoverflow2(docSnap.data().stacoverflow)
-              setjob(docSnap.data().username);
-              setUnvan(docSnap.data().email)
+              setstackoverflow2(docSnap.data().stackoverflow)
+              setjob(docSnap.data().unvan);
+                // setUnvan(docSnap.data().unvan)
             } else {
               console.log("No such document!");
               console.log(useruid);
@@ -74,7 +75,8 @@ function EditProfile() {
                 linkedin : linkedin.length > 0   ? linkedin : linkedin2,
                 stackoverflow : stackoverflow.length > 0  ? stackoverflow : stackoverflow2,
                 twitter : twitter.length > 0   ? twitter : twitter2,
-                email : email.length > 0   ? email : job
+                email : email.length > 0   ? email : job,
+                unvan : unvan.length > 0 ? unvan : job
         });
         // setTimeout(setIsProfileUpdate(false),1000);
     }
@@ -154,7 +156,7 @@ function EditProfile() {
             </div>
             <div className='editProfileSetUserContainer' >
                 <div className='editProfileSetImageContainer' >
-                    <img src={imageUpload} alt="user" id='editProfileProfileImage'  />
+                    <img src={imageUpload ? imageUpload : defaultUser} alt="user" id='editProfileProfileImage'  />
                     <div className='editProfileSetImageIcon' >
                         <div>
                             <input type="file" accept='image/*' onChange={(e) => {setImageUpload(e.target.files[0])}} />
@@ -169,7 +171,7 @@ function EditProfile() {
                         <input type="text"   onChange={(e) => {setUsername(e.target.value)}} placeholder={username2}  />
                         <input type="number" onChange={(e) => {setAge(e.target.value)}} placeholder={age2}/>
                         <input type="text"   onChange={(e) => {setCountry(e.target.value)}}  placeholder={country2} />
-                        <input type="email"  onChange={(e) => {setEmail(e.target.value)}} placeholder={job} />
+                        <input type="text"  onChange={(e) => {setUnvan(e.target.value)}} placeholder={job} />
                     </div>
                     <div>
                         <input type="url"  onChange={(e) => {setGithub(e.target.value)}}  placeholder={github2} />
@@ -183,7 +185,7 @@ function EditProfile() {
                 </div>
             </div>
             <div className='editProfileCloseButtonContainer' >
-                <button><NavLink to="/" ><i class="fa-solid fa-xmark"></i></NavLink></button>
+                <button><NavLink to="/" className="editProfileCloseButton"><i className="fa-solid fa-xmark"></i></NavLink></button>
             </div>
         </div>
     </>

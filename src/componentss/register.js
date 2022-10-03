@@ -43,13 +43,13 @@ function Register() {
                 uid : useruid,
                 username : username,
                 email : emaill,
-                age : "",
+                age : "Yaş",
                 country : "Türkiye",
-                github : "",
-                linkedin : "",
-                stackoverflow : "",
-                twitter : "",
-                
+                github : "Github",
+                linkedin : "Linkedin",
+                stackoverflow : "Stackoverflow",
+                twitter : "Twitter",
+                unvan: "Ünvan"
         })
     }
     

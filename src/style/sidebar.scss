@@ -1,4 +1,4 @@
-.asideBarContainer1 {
+.asideBarContainer1 { 
     width: 14%;
     // height: calc(100vh - 14.2vh);
     background-color: #fafafa;
@@ -18,7 +18,7 @@
                 cursor: pointer;
                 box-sizing: border-box;
                 width: 70%;
-                line-height: 7vh;
+                line-height: 3.5vw;
                 font-family: 'Roboto Mono', monospace;
                 background-color: #fafafa;
                 font-size: .8vw; 
@@ -27,12 +27,15 @@
                 align-items: center;
                 color: #b6bec7;
                 position: relative;
-
-                i {
-                    font-size: 1vw;
-                    margin: 0 6% 0 11%;
-                }                
-            }
+                    i {
+                        font-size: 1vw;
+                        margin: 0 6% 0 11%;
+                    }  
+                    .fa-blog {
+                        margin: 0 11% 0 35%;
+                    }
+            
+            }  
             .asideBarNavigationOnclick {
                 border-top: 1px solid #ececec;
                 border-left: 1px solid #ececec;
@@ -40,7 +43,7 @@
                 cursor: pointer;
                 box-sizing: border-box;
                 width: 70%;
-                line-height: 7vh;
+                line-height: 3.5vw;
                 font-family: 'Roboto Mono', monospace;
                 background-color: white;
                 border-bottom-left-radius: 10px;
@@ -60,10 +63,21 @@
                     right: -1%;
                     z-index: 9;
                 }
-                i{
-                    font-size: 1vw;
-                    margin: 0 6% 0 11%;
-                }
+              
+                    i:nth-child(1){
+                        font-size: 1vw;
+                        margin: 0 6% 0 11%;
+                    }
+                    i:nth-child(2){
+                        font-size: 1vw;
+                        margin: 0 6% 0 11%;
+                    }
+                    i:nth-child(3){
+                        font-size: 1vw;
+                        margin: 0 15% 0 15%;
+                    }
+               
+  
             }
             .categoriesContainer1 {
                 width: 60%;

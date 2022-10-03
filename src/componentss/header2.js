@@ -7,6 +7,7 @@ import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "../firebase"
 import db from '../firebase'
 import { auth } from "../firebase"
+import defaultUser from '../media/defaultuser.jpg'
 import '../style/headeriki.css'
 
 function Header2() {
@@ -68,7 +69,7 @@ function Header2() {
                         </div>
                         <div className='headerUserInformationsContainer' >
                             <div className='headerUserInformationsContainer2' >
-                                <img src={gorillaLogo} alt='user' id='header2Userİmage' />
+                                <img src={defaultUser} alt='user' id='header2Userİmage' />
                                 <div>
                                     <h1>
                                         {username2}

@@ -12,10 +12,11 @@
             li:nth-child(1) {
                 margin-bottom: 8%;
                 input {
+                    font-size: .9vw;
                     width: 100%;
-                    line-height: 4.8vh;
+                    line-height: 2.4vw;
                     border-radius: 25px;
-                    border: 2px solid rgba($color: #000000, $alpha: .2);
+                    border: .1vw solid rgba($color: #000000, $alpha: .2);
                     font-weight: 600;
                     letter-spacing: -1px;
                     color: rgba($color: #000000, $alpha: .4);
@@ -28,9 +29,9 @@
                 select {
                     cursor: pointer;
                     width: 100%;
-                    height: 5.6vh;
+                    height: 2.7vw;
                     border-radius: 25px;
-                    border: 2px solid rgba($color: #000000, $alpha: .2);
+                    border: .1vw solid rgba($color: #000000, $alpha: .2);
                     padding: 0 5% 0 5%;
                     font-size: .9vw;
                     font-family: 'Roboto Mono', monospace;
@@ -40,9 +41,9 @@
                     outline: none;
                     option {
                         width: 100%;
-                        height: 5.6vh;
+                        height: 2.3vw;
                         border-radius: 25px;
-                        border: 2px solid rgba($color: #000000, $alpha: .2);
+                        border: .1vw solid rgba($color: #000000, $alpha: .2);
                     }
                 }
             }
@@ -51,7 +52,7 @@
                 button {
                     cursor: pointer;
                     width: 100%;
-                    line-height: 4.8vh;
+                    line-height: 2.4vw;
                     border-radius: 25px;
                     background-color: #5d4cc6;
                     border: none;
@@ -82,31 +83,47 @@
         // min-height: 62vh;
         background-color: #fafafa;
         .codemirrorButtons {
-            height: 9vh;
+            height: 4.5vw;
             background-color: #fafafa;
             button:nth-child(1) {
                 cursor: pointer;
-                width: 4.4%;
-                height: 60%;
+                width: 2.8vw;
+                height: 2.8vw;
                 border-radius: 50px;
                 background-color: white;
-                border: 2px dashed rgba($color: #000000, $alpha: .2);
+                border: .1vw dashed rgba($color: #000000, $alpha: .2);
                 i {
                     color: rgba($color: #000000, $alpha: .2);
                     font-size: 1.1vw;
                 }
+                &:hover {
+                    -webkit-box-shadow: 0px 10px 25px -1px rgba(0,0,0,0.75);
+                    -moz-box-shadow: 0px 10px 25px -1px rgba(0,0,0,0.75);
+                    box-shadow: 0px 10px 25px -1px rgba(0,0,0,0.75);
+                }
+                &:active {
+                    transform: scale(.7);
+                }
             }
             button:nth-child(2) {
                 cursor: pointer;
-                width: 4.4%;
-                height: 60%;
+                width: 2.8vw;
+                height: 2.8vw;
                 border-radius: 50%;
                 background-color: white;
-                border: 1px solid rgba($color: #000000, $alpha: .2);
+                border: .1vw solid rgba($color: #000000, $alpha: .2);
                 margin-left: 3%;
                 i {
                     color: rgba($color: #000000, $alpha: .2);
                     font-size: 1.1vw;
+                }
+                &:hover {
+                    -webkit-box-shadow: 0px 10px 25px -1px rgba(0,0,0,0.75);
+                    -moz-box-shadow: 0px 10px 25px -1px rgba(0,0,0,0.75);
+                    box-shadow: 0px 10px 25px -1px rgba(0,0,0,0.75);
+                }
+                &:active {
+                    transform: scale(.7);
                 }
             }
         }
@@ -115,7 +132,7 @@
             padding: 1%;
             min-height: 53vh;
             background-color: white;
-            border: 1px solid rgba($color: #000000, $alpha: .2);
+            border: .1vw solid rgba($color: #000000, $alpha: .2);
             border-radius: 25px;
         }
     }

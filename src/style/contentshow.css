@@ -63,6 +63,7 @@
   margin-top: 10%;
 }
 .contentShowContainer .createContentInputsContainer ul li:nth-child(4) button:nth-child(1) {
+  cursor: pointer;
   display: flex;
   align-items: center;
   border: none;
@@ -76,9 +77,14 @@
   font-size: 1.1vw;
   margin-right: 13%;
 }
+.contentShowContainer .createContentInputsContainer ul li:nth-child(4) button:nth-child(1):hover {
+  color: rgba(0, 0, 0, 0.8);
+}
 .contentShowContainer .createContentInputsContainer ul li:nth-child(4) button:nth-child(2) {
+  cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   border: none;
   background-color: #fafafa;
   font-size: 0.9vw;
@@ -89,6 +95,9 @@
 .contentShowContainer .createContentInputsContainer ul li:nth-child(4) button:nth-child(2) i {
   font-size: 1.1vw;
   margin-left: 13%;
+}
+.contentShowContainer .createContentInputsContainer ul li:nth-child(4) button:nth-child(2):hover {
+  color: rgba(0, 0, 0, 0.8);
 }
 .contentShowContainer .createContentInputsContainer ul li:nth-child(5) {
   width: 100%;

@@ -6,7 +6,7 @@
 
 .contentBox {
   display: flex;
-  line-height: 8vh;
+  line-height: 4vw;
   box-shadow: 0px 5px 11px -5px rgba(0, 0, 0, 0.2);
 }
 .contentBox .contentBoxDiv1 {

@@ -67,37 +67,7 @@ function ContentShow() {
     let budur = [localStorage.getItem('contentArrayLS',contentArrayIndex)];
     let budur2 = [localStorage.getItem('contentArrayLS',icerikKtegorisi)];
 
-    const [of,setOf] = useState([])
-
-
-
-
-// console.log("BLOGBLOGBLOGLBOG",blogArrayIndex)
-// console.log("kategoriiiiiiiii",icerikKtegorisi)
-
-    
-
-
-
-
-//     const fetchAll = (e) => {
-//         e && e.preventDefault();
-//         db.collection(icerikKtegorisi)
-//         .get()
-//         .then((snapshot) => {
-//             setOf([])//
-//             if(snapshot.docs.length>0){
-//                 snapshot.docs.forEach((doc) => {
-//                     setOf((prev) => {
-//                         return [...prev,doc.data().icerikbasligi]
-//                       })
-//                 });
-//             };
-//         });
-//         console.log(of)
-//     };
-
-// useEffect(fetchAll,[])
+    const [name,setname] = useState("")
   
 
     const [count,setCount] = useState(icerikKtegorisi == "blog" ? blogArrayIndex.indexOf(icerikBasligi) : contentArrayIndex.indexOf(icerikBasligi))
@@ -161,11 +131,23 @@ useEffect(() => {
         //alert(e.message)
     })
 },[uid]);
+
+
+// useEffect(() => {
+//     getDoc(doc(db, "users", uid)).then(docSnap => {
+//         if (docSnap.exists()) {
+//           setname(docSnap.data().username);
+//         } else {
+//           console.log("No such document!");
+//         //   console.log(useruid);
+//         }
+//       })
+// },[count])
   
 
       useEffect(() => {
         setImage(categoryImage[categoryName.indexOf(icerikKtegorisi)] && categoryImage[categoryName.indexOf(icerikKtegorisi)]);
-        setCategory(categoryName2[categoryName.indexOf(icerikKtegorisi)] && categoryName2[categoryName.indexOf(icerikKtegorisi)])
+        setCategory(categoryName2[categoryName.indexOf(icerikKtegorisi)] && categoryName2[categoryName.indexOf(icerikKtegorisi)]);
     },[])
 
     // const [calendarIndex,setCalendarIndex] = useState([])

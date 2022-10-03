@@ -8,6 +8,7 @@ import { auth } from "../firebase"
 import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "../firebase"
 import '../style/header.css'
+import defaultUser from '../media/defaultuser.jpg'
 import { useContext } from "react";
 import UserContext from "../context/usernamecontext";
 import { setDoc } from "firebase/firestore"; 
@@ -31,7 +32,7 @@ function Header() {
         getDoc(doc(db, "users", useruid)).then(docSnap => {
             if (docSnap.exists()) {
               setUsernamee(docSnap.data().username);
-              setUnvan(docSnap.data().email)
+              setUnvan(docSnap.data().unvan)
             } else {
               console.log("No such document!");
               console.log(useruid);
@@ -99,7 +100,7 @@ function Header() {
                         </div>
                         <div className='headerUserInformationsContainer' >
                             <div className='headerUserInformationsContainer2' >
-                                <img src={gorillaLogo} alt='user' id='headerUserImage' />
+                                <img src={defaultUser} alt='user' id='headerUserImage' />
                                 <div>
                                     <h1>
                                         {usernamee}

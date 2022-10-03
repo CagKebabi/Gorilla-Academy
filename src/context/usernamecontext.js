@@ -12,6 +12,7 @@ export const UserNameProvider = ({children}) => {
     const [stackoverflow,setStackoverflow] = useState("")
     const [twitter,setTwitter] = useState("")
     const [email,setEmail] = useState("")
+    const [unvan,setUnvan] = useState("")
 
     const values = {
         username,setUsername,
@@ -21,7 +22,8 @@ export const UserNameProvider = ({children}) => {
         linkedin,setLinkedin,
         stackoverflow,setStackoverflow,
         twitter,setTwitter,
-        email,setEmail
+        email,setEmail,
+        unvan,setUnvan
     };
         return <UserContext.Provider value={values}>{children}</UserContext.Provider>
 }

@@ -16,8 +16,10 @@
         border: 1px solid rgba($color: #000000, $alpha: 0.1);
         border-radius: 15px;
         position: relative;
+        min-height: 83vh;
+        overflow: hidden;
         .mainSection1WelcomeContainer {
-            border-bottom: .2vh solid rgba($color: #000000, $alpha: .1);
+            border-bottom: .1vw solid rgba($color: #000000, $alpha: .1);
             display: flex;
             width: 100%;
             .mainSection1WelcomeUserSide {
@@ -26,26 +28,26 @@
                 .mainSection1WelcomeTextContainer {
                     width: 100%;
                     h1 {
-                        line-height: 10vh;
+                        line-height: 5vw;
                         font-size: 2.3vw;
                         font-weight: 600;
                         letter-spacing: 1px;
                     }
                     h2 {
-                        line-height: 2.6vh;
+                        line-height: 1.6vw;
                         font-size: 1.5vw;
                         font-weight: 500;
                     }
                     h3 {
-                        line-height: 2.6vh;
+                        line-height: 1.6vw;
                         font-size: 1.5vw;
                         font-weight: 600;
                     }
                 }
                 .mainSection1WelcomeIconContainer {
                     div {
-                        width: 27%;
-                        height: 9vh;
+                        width: 43%;
+                        height: 4.5vw;
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
@@ -103,7 +105,7 @@
         .mainSection1LastUploadedText {
             h1 {
                 font-size: 1.3vw;
-                line-height: 10vh;
+                line-height: 6.1vw;
                 font-weight: 800;
                 font-family: Arial, Helvetica, sans-serif;
                 color: #5c4cc6;
@@ -112,7 +114,7 @@
         .mainSection1LastUploadedTitles {
             display: flex;
             justify-content: space-between;
-            line-height: 7vh;
+            line-height: 6vw;
             -webkit-box-shadow: 0px 5px 11px -5px rgb(0 0 0 / 20%);
             -moz-box-shadow: 0px 5px 11px -5px rgb(0 0 0 / 20%);
             box-shadow:0px 5px 11px -5px rgb(0 0 0 / 20%);
@@ -144,7 +146,7 @@
                     border-radius: 50px;
                     padding: 0 5% 0 5%;
                     width: 50%;
-                    height: 5.4vh;
+                    height: 2.8vw;
                     color: rgba($color: #000000, $alpha: .3);
                     background-color: white;
                     -webkit-box-shadow: -1px 5px 12px -1px rgba(0,0,0,0.14);
@@ -243,14 +245,14 @@
                 li {
                     display: flex;
                     align-items: center;
-                    line-height: 3.5vh;
+                    line-height: 1.8vw;
                 }
                 li:nth-child(1) {
                     div {
                         background-color: #A8CAFE;
                         border-radius: 100%;
-                        width: 4%;
-                        height: 1.4vh;
+                        width: .8vw;
+                        height: .8vw;
                         margin-left: 5%;
                     }
                 }
@@ -258,8 +260,8 @@
                     div {
                         background-color: #5c4cc6;
                         border-radius: 100%;
-                        width: 4%;
-                        height: 1.4vh;
+                        width: .8vw;
+                        height: .8vw;
                         margin-left: 5%;
                     }
 
@@ -268,8 +270,8 @@
                     div {
                         background-color: lightblue;
                         border-radius: 100%;
-                        width: 4%;
-                        height: 1.4vh;
+                        width: .8vw;
+                        height: .8vw;
                         margin-left: 5%;
                     }
                 }
@@ -277,8 +279,8 @@
                     div {
                         background-color: #e39c98;
                         border-radius: 100%;
-                        width: 4%;
-                        height: 1.4vh;
+                        width: .8vw;
+                        height: .8vw;
                         margin-left: 5%;
                     }
                 }
@@ -286,16 +288,16 @@
                     div {
                         background-color: #aad7a2;
                         border-radius: 100%;
-                        width: 4%;
-                        height: 1.4vh;
+                        width: .8vw;
+                        height: .8vw;
                         margin-left: 5%;
                     }
                 }
                 div:nth-child(5) {
                     background-color: #5c4cc6;
                     border-radius: 100%;
-                    width: 4%;
-                    height: 1.4vh;
+                    width: .8vw;
+                    height: .8vw;
                     margin-left: 5%;
                 }
                 h1 {
